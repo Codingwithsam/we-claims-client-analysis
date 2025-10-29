@@ -147,6 +147,15 @@
     }
   }
 
+
+  footer {
+    @apply glass sticky bottom-0 z-50;
+
+    div {
+      @apply text-center mx-auto container sm:px-10 px-5 py-4;
+    }
+  }
+
   header {
     @apply glass sticky top-0 z-50;
 
