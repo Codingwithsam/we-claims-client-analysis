@@ -149,7 +149,7 @@
 
 
   footer {
-    @apply glass sticky bottom-0 z-50;
+    @apply glass fixed bottom-0 z-50 left-0 right-0;
 
     div {
       @apply text-center mx-auto container sm:px-10 px-5 py-4;

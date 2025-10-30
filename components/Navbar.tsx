@@ -12,8 +12,8 @@ const Navbar = () => {
 
                 <ul>
                     <Link href={"/"}>Home</Link>
-                    <Link href={"/"}>Services</Link>
-                    <Link href={"/"}>Eligibility</Link>
+                    <Link href={"/services"}>Services</Link>
+                    <Link href={"/eligibility"}>Eligibility</Link>
                 </ul>
             </nav>
         </header>
