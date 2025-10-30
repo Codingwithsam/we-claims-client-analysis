@@ -42,12 +42,14 @@ const Page = () => {
                 onClick={handleSubmit}
                 disabled={loading}
             >
-                {loading ? "Analyzing..." : "Analyze Claim"}
+                <span className="flex-1 text-center sm:text-left">{loading ? "Analyzing..." : "Analyze Claim"}</span>
+
                 <Image
                     src="/icons/arrow-down.svg"
                     alt="arrow-down"
                     width={24}
                     height={24}
+                    className="ml-auto"
                 />
             </button>
 

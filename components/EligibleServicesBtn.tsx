@@ -13,15 +13,16 @@ const EligibleServicesBtn = () => {
         <button
             type="button"
             id="eligible-btn"
-            className="mt-7 mx-auto flex items-center gap-2"
+            className="mt-7 mx-auto flex items-center max-w-xs gap-2"
             onClick={handleScroll}
         >
-            Eligible Services
+            <span className="flex-1 text-center sm:text-left">Eligible Services</span>
             <Image
                 src="/icons/arrow-down.svg"
                 alt="arrow-down"
                 width={24}
                 height={24}
+                className="ml-auto"
             />
         </button>
     )
