@@ -3,7 +3,6 @@ import { NextResponse } from "next/server"
 export async function POST(req: Request) {
     const { concern } = await req.json()
 
-    console.log(process.env.OPENAI_API_KEY ? "✅ API Key loaded" : "❌ Missing key")
     const prompt = `
   You are an assistant that evaluates workplace disability claim concerns.
   For the given concern, respond ONLY with a JSON array.

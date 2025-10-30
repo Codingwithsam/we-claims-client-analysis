@@ -54,7 +54,7 @@ const Page = () => {
             </button>
 
             {results.length > 0 && (
-                <div className="mt-6 w-full">
+                <div className="mt-6 w-full mb-8">
                     <h2 className="text-lg font-semibold mb-2">Results:</h2>
                     <ul className="space-y-2">
                         {results.map((r) => (
