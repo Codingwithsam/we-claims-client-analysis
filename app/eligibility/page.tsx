@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
     const [concern, setConcern] = useState("")
@@ -58,12 +59,16 @@ const Page = () => {
                     <h2 className="text-lg font-semibold mb-2">Results:</h2>
                     <ul className="space-y-2">
                         {results.map((r) => (
-                            <li
-                                key={r.key}
-                                className="flex justify-between border-b pb-1 text-sm"
-                            >
-                                <span>{r.name}</span>
-                                <span>Eligibility: {(r.probability * 100).toFixed(1)}%</span>
+                            <li key={r.key} className="border-b pb-1 text-sm list-none">
+                                <Link
+                                    href={`/services/${r.key}`}
+                                    className="flex justify-between items-center hover:bg-blue-500 p-2 rounded-md transition"
+                                >
+                                    <span className="font-medium">{r.name}</span>
+                                    <span className="text-sm text-gray-600">
+      Eligibility: {(r.probability * 100).toFixed(1)}%
+    </span>
+                                </Link>
                             </li>
                         ))}
                     </ul>
