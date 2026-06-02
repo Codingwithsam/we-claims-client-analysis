@@ -3,9 +3,15 @@ import { useState } from "react"
 import Image from "next/image";
 import Link from "next/link";
 
+type ClaimResult = {
+  key: string
+  name: string
+  probability: number
+}
+
 const Page = () => {
     const [concern, setConcern] = useState("")
-    const [results, setResults] = useState<any[]>([])
+    const [results, setResults] = useState<ClaimResult[]>([])
     const [loading, setLoading] = useState(false)
 
     const handleSubmit = async () => {
@@ -15,7 +21,7 @@ const Page = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ concern }),
         })
-        const data = await res.json()
+        const data: ClaimResult[] = await res.json()
         setResults(data)
         setLoading(false)
     }

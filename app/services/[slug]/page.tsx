@@ -1,5 +1,6 @@
 import { services } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface Props {
@@ -8,7 +9,6 @@ interface Props {
 
 const ServicePage = async ({params}: {params: Promise<{slug: string}>}) => {
     const { slug } = await params
-    console.log(slug);
     const service = services.find((s) => s.slug === slug);
 
     if (!service) return notFound();
@@ -36,12 +36,9 @@ const ServicePage = async ({params}: {params: Promise<{slug: string}>}) => {
             <p className="mt-4 text-lg">{service.description}</p>
 
             <div className="mt-6">
-                <a
-                    href="/#services"
-                    className="text-blue-600 hover:underline text-sm font-medium"
-                >
+                <Link href="/#services" className="text-blue-600 hover:underline text-sm font-medium">
                     ← Back to all services
-                </a>
+                </Link>
             </div>
         </section>
     )
